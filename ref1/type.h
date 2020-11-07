@@ -1,11 +1,9 @@
-#ifndef __OBJ_H__
-#define __OBJ_H__
+#ifndef __TYPE_H__
+#define __TYPE_H__
 
 //オブジェクト構造体
-typedef struct obj {
+typedef struct prop {
 	char* name;
-	uint32_t name_hash;
-
 	uint32_t size;
 	uint32_t length;		//0=値, 1以上=配列
 	union {
@@ -19,6 +17,7 @@ typedef struct obj {
 		int64_t s64;
 		float flt;
 		double dbl;
+
 		void* ptr;
 		char* str;
 
@@ -33,14 +32,22 @@ typedef struct obj {
 		float* pflt;
 		double* pdbl;
 	} value;
-} obj, * pobj;
+
+} prop, *props;
 
 
-//オブジェクト作成
-extern pobj obj_create(int size, int length, char* name, void* value);
+extern void* _dummy;
 
-//オブジェクト破棄
-extern void obj_free(pobj self);
+#define nameof(name) #name
+#define _TYPE(type_name) { #type_name, sizeof(type_name) }
+#define _PROP(type_name, prop_name) { #prop_name, sizeof(((type_name*)_dummy)->prop_name) }
+
+typedef struct {
+	const char* name;
+	uint8_t size;
+} type_info, *ptype_info;
+
+extern const ptype_info typeof(const char* name);
 
 
-#endif//__OBJ_H__
+#endif//__TYPE_H__

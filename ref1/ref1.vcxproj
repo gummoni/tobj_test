@@ -142,11 +142,13 @@
   <ItemGroup>
     <ClCompile Include="crc32.c" />
     <ClCompile Include="main.c" />
-    <ClCompile Include="obj.c" />
+    <ClCompile Include="type.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="crc32.h" />
-    <ClInclude Include="obj.h" />
+    <ClInclude Include="type.h" />
+    <ClInclude Include="typedef.h" />
+    <ClInclude Include="main.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

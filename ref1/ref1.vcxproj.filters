@@ -21,7 +21,7 @@
     <ClCompile Include="crc32.c">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="obj.c">
+    <ClCompile Include="type.c">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +29,13 @@
     <ClInclude Include="crc32.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="obj.h">
+    <ClInclude Include="type.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="typedef.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>

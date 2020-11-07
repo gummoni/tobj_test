@@ -10,9 +10,16 @@
 //ƒƒCƒ“ˆ—
 int main(void) {
 
-	//types = malloc(sizeof(type));
-	int siz1 = sizeof(hello);
+	const type_info* t = typeof(hello);
+	prop_info pinfo;
 
+	hello h = { 123, "MESSAGE" };
+
+	if (try_prop_get(t, foo, &pinfo)) {
+		value* v = prop_value_get(&pinfo, &h);
+		v->u8 = 233;
+		v->u8 = 100;
+	}
 
 	return 0;
 }

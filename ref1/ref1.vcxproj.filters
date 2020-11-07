@@ -21,6 +21,9 @@
     <ClCompile Include="crc32.c">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="buf.c">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
     <ClCompile Include="rtype.c">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -32,10 +35,10 @@
     <ClInclude Include="main.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="rtype.h">
+    <ClInclude Include="rtypedef.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="rtypedef.h">
+    <ClInclude Include="buf.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,5 +1,5 @@
-#ifndef __TYPE_H__
-#define __TYPE_H__
+#ifndef __RTYPE_H__
+#define __RTYPE_H__
 
 //オブジェクト構造体
 typedef union {
@@ -32,29 +32,29 @@ extern void* _dummy;
 
 //Type用Define
 #define nameof(name) #name
-#define _TYPE(type_name) { #type_name, sizeof(type_name) }
-#define _PROP(type_name, prop_name) { #prop_name, sizeof(((type_name*)_dummy)->prop_name) }
+#define RTYPE(type_name) { #type_name, sizeof(type_name) }
+#define RPROP(type_name, prop_name) { #prop_name, sizeof(((type_name*)_dummy)->prop_name) }
 
 //Type情報
 typedef struct {
 	const char* name;
 	uint8_t size;
-} type_info;
+} rtype;
 
 //type用関数
-extern const type_info* __typeof(const char* name);
-#define typeof(type) __typeof(#type)
+extern const rtype* __rtypeof(const char* name);
+#define rtypeof(type) __rtypeof(#type)
 
 //Prop情報
 typedef struct {
 	uint32_t offset;
 	uint8_t size;
-} prop_info;
+} rprop;
 
 //Prop用関数
 #define try_prop_get(self, prop_name, result) __try_prop_get(self, #prop_name, result)
-extern bool __try_prop_get(const type_info* self, const char* prop_name, prop_info* result);
-extern value* prop_value_get(prop_info* self, void* obj);
+extern bool __try_prop_get(const rtype* self, const char* prop_name, rprop* result);
+extern value* prop_value_get(rprop* self, void* obj);
+extern void prop_value_set(rprop* self, void* obj, void* data);
 
-
-#endif//__TYPE_H__
+#endif//__RTYPE_H__

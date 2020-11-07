@@ -148,6 +148,7 @@
   <ItemGroup>
     <ClInclude Include="buf.h" />
     <ClInclude Include="crc32.h" />
+    <ClInclude Include="rtype.h" />
     <ClInclude Include="rtypedef.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>

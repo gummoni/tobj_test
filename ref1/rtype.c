@@ -1,3 +1,4 @@
+#include "rtype.h"
 #include "rtypedef.h"
 
 object _;

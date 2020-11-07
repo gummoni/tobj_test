@@ -25,7 +25,7 @@ typedef union {
 	double* pdbl;
 	void* ptr;
 	char* str;
-} value;
+} object;
 
 //íËã`ópïœêî
 extern void* _dummy;
@@ -54,7 +54,7 @@ typedef struct {
 //Propópä÷êî
 #define try_prop_get(self, prop_name, result) __try_prop_get(self, #prop_name, result)
 extern bool __try_prop_get(const rtype* self, const char* prop_name, rprop* result);
-extern value* prop_value_get(rprop* self, void* obj);
+extern object* prop_value_get(rprop* self, void* obj);
 extern void prop_value_set(rprop* self, void* obj, void* data);
 
 #endif//__RTYPE_H__

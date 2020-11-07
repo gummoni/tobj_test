@@ -38,13 +38,13 @@ bool __try_prop_get(const rtype* self, const char* prop_name, rprop* result) {
 }
 
 //Prop情報を使って構造体ポインタ取得
-value* prop_value_get(rprop* self, void* obj) {
-	return (value*)((void*)((uint32_t)obj + self->offset));
+object* prop_value_get(rprop* self, void* obj) {
+	return (object*)((void*)((uint32_t)obj + self->offset));
 }
 
 //Prop情報を使って構造体ポインタに値書込み
 void prop_value_set(rprop* self, void* obj, void* data) {
-	value* pval = prop_value_get(self, obj);
+	object* pval = prop_value_get(self, obj);
 	switch (self->size) {
 	case 1:
 		pval->u8 = (uint8_t)data;

@@ -16,7 +16,7 @@ int main(void) {
 	hello h = { 123, "MESSAGE" };
 
 	if (try_prop_get(t, foo, &pinfo)) {
-		value* v = prop_value_get(&pinfo, &h);
+		object* v = prop_value_get(&pinfo, &h);
 		v->u8 = 233;
 		prop_value_set(&pinfo, &h, 151);
 		v->u8 = 100;
